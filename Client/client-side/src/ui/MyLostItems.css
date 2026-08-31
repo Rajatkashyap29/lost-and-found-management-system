@@ -1,0 +1,216 @@
+.my-lost-page {
+    min-height: 100vh;
+    padding: 40px;
+    background: #f5f7fb;
+}
+
+.my-lost-header {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-lost-header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #1f2937;
+}
+
+.my-lost-header p {
+    margin-top: 6px;
+    color: #6b7280;
+}
+
+.report-new-btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.lost-items-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.lost-item-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+
+    display: flex;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.item-image {
+    width: 180px;
+    min-height: 210px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #eef0f5;
+    color: #9ca3af;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-content {
+    flex: 1;
+    padding: 18px;
+}
+
+.item-title-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.item-title-row h2 {
+    margin: 0;
+    font-size: 19px;
+    color: #1f2937;
+}
+
+.status-badge {
+    height: fit-content;
+
+    padding: 4px 9px;
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    background: #dcfce7;
+    color: #166534;
+}
+
+.item-description {
+    margin: 12px 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.item-info p {
+    margin: 7px 0;
+    color: #4b5563;
+    font-size: 13px;
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.item-actions button {
+    padding: 7px 12px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.view-btn {
+    background: #eef2ff;
+    color: #4338ca;
+}
+
+.edit-btn {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.empty-state,
+.lost-loading {
+    max-width: 600px;
+    margin: 100px auto;
+    text-align: center;
+    color: #6b7280;
+}
+
+@media (max-width: 800px) {
+
+    .lost-items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .my-lost-header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .my-lost-page {
+        padding: 20px;
+    }
+
+    .lost-item-card {
+        flex-direction: column;
+    }
+
+    .item-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .my-lost-header {
+        flex-direction: column;
+    }
+}
+.pagination {
+    max-width: 1100px;
+    margin: 30px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.pagination button {
+    padding: 9px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #4f46e5;
+    color: white;
+
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-weight: 600;
+    color: #374151;
+}

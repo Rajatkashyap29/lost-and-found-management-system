@@ -1,0 +1,204 @@
+.report-found-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background: #f4f7fc;
+}
+
+
+.report-found-card {
+    width: 550px;
+    max-width: 100%;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ================= HEADER ================= */
+
+.form-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.found-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: auto;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    font-size: 32px;
+}
+
+.form-header h2 {
+    font-size: 28px;
+
+    color: #222;
+
+    margin-bottom: 6px;
+}
+
+.form-header p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* ================= FORM ================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
+
+    color: #333;
+
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+
+    width: 100%;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 12px 14px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+    background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+.form-group textarea {
+
+    height: 110px;
+
+    resize: vertical;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.form-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.form-buttons button {
+
+    flex: 1;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.cancel-btn {
+
+    background: #f1f1f1;
+
+    color: #444;
+}
+
+.cancel-btn:hover {
+
+    background: #e5e5e5;
+}
+
+
+.submit-btn {
+
+    background: #2563eb;
+
+    color: white;
+}
+
+.submit-btn:hover {
+
+    background: #1d4ed8;
+}
+
+.submit-btn:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+
+    .report-found-card {
+
+        padding: 25px 20px;
+    }
+
+    .form-buttons {
+
+        flex-direction: column;
+    }
+
+}
