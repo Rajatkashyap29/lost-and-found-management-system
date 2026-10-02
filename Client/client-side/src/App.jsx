@@ -1,42 +1,66 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from 'react'
-import api from './api'
-import Connection from './connection'
-import Register from './pages/Register'
-import Login from './pages/Login'
-import Dashboard from "./pages/dashboard";
-import ReportLost from "./pages/ReportLost";
-import MyLostItems from "./pages/MyLostItems";
-import ReportFound from "./pages/ReportFound";
-import MyFoundItems from "./pages/MyFoundItems";
-function App() {
-  
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import { ToastProvider } from "./context/ToastContext";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
+// Pages
+import Landing from "./pages/Landing";
+import BrowseItems from "./pages/BrowseItems";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import ReportLost from "./pages/ReportLost";
+import ReportFound from "./pages/ReportFound";
+import MyLostItems from "./pages/MyLostItems";
+import MyFoundItems from "./pages/MyFoundItems";
+import MyClaims from "./pages/MyClaims";
+import Admin from "./pages/Admin";
+
+function App() {
   return (
     <BrowserRouter>
+      <ToastProvider>
+        <AuthProvider>
+          <div className="app-container">
+            <Navbar />
+            <main className="main-content">
+              <Routes>
+                {/* Landing & Public Pages */}
+                <Route path="/" element={<Landing />} />
+                <Route path="/items" element={<BrowseItems />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
 
-      <Routes>
-        <Route path="/"  element = {<Connection/>} />
+                {/* Dashboard & Profile */}
+                <Route path="/dashboard" element={<Dashboard />} />
 
-        <Route path="/Register" element={<Register />} />
+                {/* Report Lost & Found */}
+                <Route path="/lost-item" element={<ReportLost />} />
+                <Route path="/report-lost" element={<ReportLost />} />
+                <Route path="/found-item" element={<ReportFound />} />
+                <Route path="/report-found" element={<ReportFound />} />
 
-        <Route path="/login" element={<Login />} />
+                {/* My Items & Claims */}
+                <Route path="/see-lost-item" element={<MyLostItems />} />
+                <Route path="/my-lost-items" element={<MyLostItems />} />
+                <Route path="/see-found-item" element={<MyFoundItems />} />
+                <Route path="/my-found-items" element={<MyFoundItems />} />
+                <Route path="/my-claims" element={<MyClaims />} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+                {/* Admin Management */}
+                <Route path="/admin" element={<Admin />} />
 
-        <Route path="/lost-item" element={<ReportLost />} />
-
-        <Route path="/see-lost-item" element={<MyLostItems />} />
-
-        <Route path="/found-item" element={<ReportFound />} />
-
-        <Route path="/see-found-item" element={<MyFoundItems />} />
-
-
-      </Routes>
-
+                {/* Catch-all redirect */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </AuthProvider>
+      </ToastProvider>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

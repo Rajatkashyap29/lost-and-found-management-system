@@ -1,13 +1,13 @@
-# Environment variables
+# Environment
 .env
-*.env
+.env.*
+!.env.example
 
 # Python
 __pycache__/
 *.py[cod]
-venv/
 .venv/
-env/
+venv/
 
 # Node
 node_modules/
